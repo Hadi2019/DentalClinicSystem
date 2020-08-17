@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: lavender;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.DentalPaymentSystemController">
+   <children>
+      <Label layoutX="152.0" layoutY="21.0" text="DENTAL PAYMENT SYSTEM" textFill="#a85a5a">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="36.0" layoutY="111.0" text="Name of Patient:" />
+      <Label layoutX="77.0" layoutY="175.0" text="Address:" />
+      <Label layoutX="76.0" layoutY="235.0" text="Province:" />
+      <TextField fx:id="textFieldName" layoutX="143.0" layoutY="107.0" />
+      <TextField fx:id="textFieldAddress" layoutX="143.0" layoutY="171.0" />
+      <Label layoutX="363.0" layoutY="76.0" text="Dental Services Available">
+         <font>
+            <Font name="Verdana" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="505.0" layoutY="111.0" prefHeight="17.0" prefWidth="45.0" text="\$ 20.00" />
+      <Label layoutX="505.0" layoutY="154.0" text="\$ 75.00" />
+      <Label layoutX="502.0" layoutY="196.0" text="\$ 150.00" />
+      <ComboBox fx:id="comboBoxProvince" editable="true" layoutX="143.0" layoutY="231.0" prefWidth="150.0" promptText="Choose a province" />
+      <RadioButton fx:id="radioButtonSenior" layoutX="47.0" layoutY="292.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="73.0" text="Senior">
+         <toggleGroup>
+            <ToggleGroup fx:id="ageStage" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="radioButtonKid" layoutX="143.0" layoutY="292.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="96.0" text="Kids &amp; Youth" toggleGroup="$ageStage" />
+      <RadioButton fx:id="radioButtonAdult" layoutX="273.0" layoutY="292.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="73.0" selected="true" text="Adult" toggleGroup="$ageStage" />
+      <Button layoutX="463.0" layoutY="288.0" mnemonicParsing="false" onAction="#button_CalculateClicked" text="Calculate" textFill="#a14545" />
+      <Label layoutX="385.0" layoutY="356.0" prefHeight="17.0" prefWidth="73.0" text="Total Fees: ">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <CheckBox fx:id="checkBoxFlossing" layoutX="367.0" layoutY="111.0" mnemonicParsing="false" text="Flossing" />
+      <CheckBox fx:id="checkBoxFilling" layoutX="367.0" layoutY="154.0" mnemonicParsing="false" text="Filling" />
+      <CheckBox fx:id="checkBoxRootCanal" layoutX="367.0" layoutY="196.0" mnemonicParsing="false" text="Root Canal" />
+      <Label fx:id="labelTotalFees" layoutX="458.0" layoutY="356.0" prefHeight="17.0" prefWidth="108.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Button layoutX="368.0" layoutY="288.0" mnemonicParsing="false" onAction="#reset_ButtonClicked" prefHeight="25.0" prefWidth="64.0" text="Reset" textFill="#ab4e4e" />
+      <TextArea fx:id="textAreaError" editable="false" layoutX="81.0" layoutY="329.0" prefHeight="65.0" prefWidth="261.0" text="   " />
+   </children>
+</AnchorPane>
